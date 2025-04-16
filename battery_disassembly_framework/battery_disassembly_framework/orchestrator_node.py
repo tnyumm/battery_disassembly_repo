@@ -43,5 +43,5 @@ class OrchestratorNode(Node):
 def main(args=None):
     rclpy.init(args=args)   # Initialise ROS
     node = OrchestratorNode()   # Instantiate Orchestrator Node
-    rclpy.spin(node)    # Keeps the node running
-    rclpy.shutdown()    # Shutdown
+    rclpy.spin(node)    # Keep the node running indefinitely, waiting for incoming messages and callbacks.
+    rclpy.shutdown()    # Gracefully shutdown ROS 2 communications when the node is stopped (e.g., via Ctrl+C).
