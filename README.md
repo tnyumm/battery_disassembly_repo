@@ -288,31 +288,3 @@ source install/setup.bash
 ros2 run battery_disassembly_framework disassemble
 ```
 **Why?** This triggers your node’s `main()` function. `colcon build` ensures everything is up-to-date.
-
----
-
-## ✅ Summary Table
-
-| **Task**                            | **Command**                                                         | **Why?**                                                                                |
-|-------------------------------------|---------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
-| **Install WSL2**                    | `wsl --install` (in PowerShell Admin)                              | Runs Linux natively on Windows                                                          |
-| **Update Ubuntu**                   | `sudo apt update && sudo apt upgrade -y`                           | Ensures system is current                                                               |
-| **Install ROS 2**                   | `sudo apt install ros-humble-desktop -y`                           | Full robotics framework                                                                 |
-| **Create workspace**                | `mkdir -p ~/ros2_ws/src && colcon build`                           | Standard ROS 2 dev layout                                                               |
-| **Set up VS Code**                  | `code .` from WSL                                                   | Use a powerful IDE in a remote Linux environment                                       |
-| **Generate SSH key**                | `ssh-keygen -t ed25519 -C "email"`                                 | Secure GitHub access                                                                    |
-| **Add key to GitHub**               | Copy from `~/.ssh/id_ed25519.pub`                                   | So GitHub recognizes your device                                                        |
-| **Switch remote to SSH**            | `git remote set-url origin git@github.com:...`                     | No password needed, uses SSH keys                                                       |
-| **Push changes**                    | `git push -u origin branch-name`                                   | Publishes your branch to GitHub                                                         |
-| **Open Pull Request**               | Via GitHub UI (Compare & PR)                                        | Formal review, merge process                                                            |
-| **Run Python node**                 | `ros2 run <package_name> <entry_point>`                             | Starts your ROS 2 Python code                                                          |
-
-
----
-
-## Final Notes
-- **Test** each step on a spare machine or a fresh WSL instance.
-- Keep your system updated and watch for new ROS 2 releases.
-- This structure (WSL2 + Ubuntu 22.04 + ROS 2 Humble) is a top recommendation by the ROS community for Windows-based dev.
-
-Now your entire team can code in **ROS 2** using **Python**, run it in **WSL2** with **VS Code**, and manage everything with **Git + GitHub**!
